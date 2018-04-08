@@ -8,7 +8,7 @@ class Node
   end
 end
 
-class LinkedList
+class SingleLinkedList
   attr_reader :head, :tail
 
   def intitialize
