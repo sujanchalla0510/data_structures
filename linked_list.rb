@@ -51,7 +51,7 @@ class LinkedList
 
   def content
     current_node = @head
-    raise "list is empty" if current_node.blank?
+    raise "list is empty" if current_node == nil
     while  current_node != nil
       print "#{current_node.value}->"
       current_node = current_node.next_node
