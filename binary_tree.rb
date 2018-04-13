@@ -64,4 +64,31 @@ class BinaryTree
       return tree_node
     end
   end
+
+  def pre_order_traverse(node)
+    return [] if node.nil?
+    results = []
+    results << node.value
+    results.concat pre_order_traverse(node.left_node)
+    results.concat pre_order_traverse(node.right_node)
+    results
+  end
+
+  def in_order_traverse(node)
+    return [] if node.nil?
+    results = []
+    results.concat in_order_traverse(node.left_node)
+    results << node.value
+    results.concat in_order_traverse(node.right_node)
+    results
+  end
+
+  def post_order_traverse(node)
+    return [] if node.nil?
+    results = []
+    results.concat post_order_traverse(node.left_node)
+    results.concat post_order_traverse(node.right_node)
+    results << node.value
+    results
+  end
 end
