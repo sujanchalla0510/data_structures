@@ -31,3 +31,16 @@ def breadth_first_search(value, tree)
   return nil
 end
 
+def bfs(node)
+  queue = []
+  queue.push(node)
+  while(queue.size != 0)
+    node = queue.shift
+    p node.val
+    children = [node.left, node.right].compact
+    children.each do |child|
+      queue.push(child)
+    end
+  end
+end
+
