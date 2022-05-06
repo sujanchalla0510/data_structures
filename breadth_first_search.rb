@@ -31,6 +31,21 @@ def breadth_first_search(value, tree)
   return nil
 end
 
+def max_depth(root)
+  return 0 if root.nil?
+  queue = [root]
+  depth = 0
+  while !queue.empty?
+    for i in 0..queue.length - 1
+      node = queue.shift
+      queue.push(node.left) if node.left
+      queue.push(node.right) if node.right
+    end
+    depth += 1
+  end
+  depth
+end
+
 def bfs(node)
   queue = []
   queue.push(node)
