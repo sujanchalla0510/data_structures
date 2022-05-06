@@ -27,3 +27,11 @@ def depth_first_search(value, tree)
   end
   return nil
 end
+
+def dfs(node)
+  p node.val
+  children = [node.left, node.right].compact
+  children.each do |child|
+    dfs(child)
+  end
+end
